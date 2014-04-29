@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
   def index
-    @list = List.first
+    @list = current_user.lists.first
     @items = @list.items
+    @new_item = Item.new
   end
 
   def show

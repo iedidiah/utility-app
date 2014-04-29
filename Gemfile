@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+
+# For handling sentitive data
+gem 'figaro'
+# Gem for creating user authentication
+gem 'devise'
 # Faker gem for creation of fake information
 gem 'faker'
 # Boostrap for easy styling and js functionality
