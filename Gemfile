@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Faker gem for creation of fake information
+gem 'faker'
 # Boostrap for easy styling and js functionality
 gem 'bootstrap-sass', '~> 3.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
