@@ -1,0 +1,13 @@
+<%= form_for [list, item] do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label "Add To-do Item" %>
+        <%= f.text_field :description, class: 'form-control', placeholder: 'Enter Activity' %>
+      </div>
+      <div class="form_group">
+        <%= f.submit "Save", class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>

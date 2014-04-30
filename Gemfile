@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Cron jobs
+gem 'whenever', :require => false
+# Pundit for access rights
+gem 'pundit'
 # For handling sentitive data
 gem 'figaro'
 # Gem for creating user authentication

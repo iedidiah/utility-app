@@ -1,11 +1,25 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @list = current_user.lists.first
-    @items = @list.items
-    @new_item = Item.new
+    if @list
+      redirect_to  @list
+    else
+      redirect_to new_list_path
+    end
   end
 
   def show
+    @list = current_user.lists.find(params[:id])
+    #this doesn't work. No graceful failure on find method.
+    if @list
+      @items = @list.items
+      @new_item = Item.new
+    else
+      flash[:error] = "That list doesn't exist."
+      redirect_to @list
+    end
   end
 
   def new
@@ -13,7 +27,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.build(list_params)
+
     if @list.save
       flash[:notice] = "Your new list has been created"
       redirect_to @list
