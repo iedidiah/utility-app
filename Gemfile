@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# TDD with Rspec
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.0'
+end
 # Cron jobs
 gem 'whenever', :require => false
 # Pundit for access rights
