@@ -23,10 +23,23 @@ class ItemsController < ApplicationController
       redirect_to @list
     end
   end
+
+  def update
+    @list = current_user.lists.find(params[:list_id])
+    @item = @list.items.find(params[:id])
+    if @item.update_attributes(item_params) 
+      flash[:notice] = "Your To-do item has been updated."
+      redirect_to @list
+    else
+      flash[:error] = "Sorry, there was an error encountered. Please try again."
+      redirect_to @list
+    end
+  end
   
   private
 
   def item_params
     params.require(:item).permit(:description)
   end
+  
 end
