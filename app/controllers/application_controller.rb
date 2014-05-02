@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound do |exception|
     redirect_to root_url, alert: exception.message
   end
+  def after_sign_in_path_for(resource)
+    new_list_path
+  end
 
   protected
 

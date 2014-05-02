@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
 end
 # Cron jobs
 gem 'whenever', :require => false

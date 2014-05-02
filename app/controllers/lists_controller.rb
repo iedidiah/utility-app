@@ -24,7 +24,12 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new
+    @list = current_user.lists.first
+    if @list
+      redirect_to @list
+    else
+      @list = List.new
+    end
   end
 
   def create

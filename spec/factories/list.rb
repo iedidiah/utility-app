@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :list do
-    title "My First List"
+    title "Mr. Doe's First List"
     user
   end
 end
